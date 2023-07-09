@@ -3,23 +3,29 @@ from flask import Flask,redirect
 from multiprocessing import Value
 import random
 
+# Initiate a counter named 'counter'
 counter = Value('i', 0)
 
+# Open a 'test-stacks.txt' file with a list of test stacks
 file = open("test-stacks.txt", "r")
 
+# Read the test stacks file into a list called 'stacks'
 with open('test-stacks.txt') as f:
     stacks = f.read().splitlines()
 
+# Start the app
 app = Flask(__name__)
 
+# If the url has path '/' (no path)
 @app.route('/')
 def hello():
-    # out = random.randrange(9)
-    # return redirect(stacks[out], code=302)
     with counter.get_lock():
+            # Create a string called 'url' as a connection of 'https://', stack name and '.grafana.net'
             url = f'https://{stacks[counter.value]}.grafana.net'
             out = counter.value
+            # Increase counter by 1
             counter.value += 1
+    # Redirect to the url
     return redirect(url, code=302) 
 
 if __name__ == '__app__':
