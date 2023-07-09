@@ -25,6 +25,7 @@ def hello():
             # Increase counter by 1
             counter.value += 1
     # Redirect to the url
+    print("A participant was redirected to", url)
     return redirect(url, code=302) 
 
 if __name__ == '__app__':
