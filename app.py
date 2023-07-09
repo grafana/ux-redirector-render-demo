@@ -22,7 +22,6 @@ def hello():
     with counter.get_lock():
             # Create a string called 'url' as a connection of 'https://', stack name and '.grafana.net'
             url = f'https://{stacks[counter.value]}.grafana.net'
-            out = counter.value
             # Increase counter by 1
             counter.value += 1
     # Redirect to the url
