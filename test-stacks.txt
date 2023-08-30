@@ -1,10 +1,6 @@
-alerting01
 alerting02
-alerting03
 alerting04
-alerting05
 alerting06
-alerting07
 alerting08
 alerting09
 alerting10
@@ -15,6 +11,5 @@ alerting14
 alerting15
 alerting16
 alerting17
-alerting18
 alerting19
 alerting20
