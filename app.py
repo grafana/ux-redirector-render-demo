@@ -21,7 +21,7 @@ app = Flask(__name__)
 def hello():
     with counter.get_lock():
             # Create a string called 'url' as a connection of 'https://', stack name and '.grafana.net'
-            url = f'https://{stacks[counter.value]}.grafana.net/d/f5ebfb7e-f3ec-45b2-acb1-d3e64539725d/login-service-dashboard?orgId=1&from=now-7d&to=now'
+            url = f'https://{stacks[counter.value]}.grafana.net/d/e01fc5f7-d567-4631-9fa1-192ef1d88497/login-service-dashboard?orgId=1'
             # Increase counter by 1
             counter.value += 1
     # Redirect to the url
