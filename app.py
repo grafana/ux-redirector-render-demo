@@ -1,6 +1,7 @@
 import os
 from flask import Flask,redirect
 from multiprocessing import Value
+from prometheus_flask_exporter import PrometheusMetrics
 import random
 
 # Initiate a counter named 'counter'
@@ -15,6 +16,10 @@ with open('test-stacks.txt') as f:
 
 # Start the app
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+
+# Metrics
+metrics.info('app_info', 'Application info', version='1.0.0')
 
 # If the url has path '/' (no path)
 @app.route('/')
