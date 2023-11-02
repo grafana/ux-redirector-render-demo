@@ -20,7 +20,7 @@ metrics = PrometheusMetrics(app)
 
 # Metrics
 stacks_number = metrics.info('test_stacks_total', 'Number of test stacks')
-stacks_number.set(lent(stacks))
+stacks_number.set(len(stacks))
 
 # If the url has path '/' (no path)
 @app.route('/')
