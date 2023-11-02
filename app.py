@@ -19,9 +19,8 @@ app = Flask(__name__)
 metrics = PrometheusMetrics(app)
 
 # Metrics
-metrics.info('app_info', 'Application info', version='1.0.0')
-metrics.info('app_info2', 'Application info2', version='2.0.0')
-metrics.info('test_stacks_total', 'Number of test stacks', version=len(stacks))
+stacks_number = metrics.info('test_stacks_total', 'Number of test stacks')
+stacks_number.set(lent(stacks))
 
 # If the url has path '/' (no path)
 @app.route('/')
